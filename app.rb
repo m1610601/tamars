@@ -6,13 +6,13 @@ require "./models"
 require "date"
 require 'bcrypt'
 enable :sessions
-require "twitter"
+# require "twitter"
 
-Cloudinary.config do |config|
-  config.cloud_name = ENV['CLOUD_NAME']
-  config.api_key = ENV['CLOUDINARY_API_KEY']
-  config.api_secret = ENV['CLOUDINARY_API_SECRET']
-end
+# Cloudinary.config do |config|
+#   config.cloud_name = ENV['CLOUD_NAME']
+#   config.api_key = ENV['CLOUDINARY_API_KEY']
+#   config.api_secret = ENV['CLOUDINARY_API_SECRET']
+# end
 
 get '/' do
   ua = request.user_agent

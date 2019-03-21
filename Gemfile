@@ -10,7 +10,7 @@ gem 'fastri'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
-
+gem 'bcrypt', '~> 3.1.11'
 gem 'rake'
 gem 'sinatra-activerecord'
 
@@ -25,6 +25,7 @@ gem 'nokogiri'
 # group :production do
 gem 'pg' , '~> 0.20'
 # end
+gem 'cloudinary'
 
 # source "https://rubygems.org"
 
@@ -37,8 +38,6 @@ gem 'pg' , '~> 0.20'
 # gem 'sinatra-activerecord'
 
 # gem 'cloudinary'
-
-# gem 'bcrypt'
 
 # group :development do
 #     gem 'sqlite3'
