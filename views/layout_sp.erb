@@ -21,7 +21,18 @@
   <div class="globalNav__logo">
     <a style="font-size: 25px;color: black;width: 100px;">Tamars</a>
   </div>
-
+  <div class="menu_background">
+    <nav class="menu_container">
+        <ul class="menu">
+          <li class="menu__item"><a href="#top">TOP</a></li>
+          <li class="menu__item"><a href="#about_tamars">#About Tamars</a></li>
+          <li class="menu__item"><a href="#activity">#Activity</a></li>
+          <li class="menu__item"><a href="#shinkan">#Shinkain!</a></li>
+          <li class="menu__item"><a href="#access">#Access</a></li>
+          <li class="menu__item"><a href="#contact_us">#Contact Us</a></li>
+        </ul>
+    </nav>
+  </div>
   <p class="hamburgerBtn">
     <span></span>
     <span></span>
@@ -159,12 +170,41 @@ body {
   font-weight: bold;
 }
 
+.menu_container {
+  display: none;
+  text-align: center;
+}
+
+.menu_background {
+  width: 100%;
+  height: 100%;
+  background: #00000070;
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  padding-top: 50px;
+}
+.menu {
+  padding: 0;
+}
+
+.menu__item {
+  line-height: 4em;
+}
+
+.menu__item a {
+  font-size: 40px;
+  color: white!important;
+  text-decoration: underline;
+}
+
 </style>
 </body>
 <script>
 $(function(){
   $('a[href^="#"]').click(function(){
-    var speed = 500;
+    var speed = 800;
     var href= $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
     var position = target.offset().top;
@@ -177,7 +217,23 @@ $(function(){
     } else {
       $(this).addClass('clicked');
     }
+
+    $(".menu_background").toggleClass('open');
+    $(".menu_background").toggle();
+    $(".menu_container").slideToggle(500);
   });
+
+  $('.menu__item a').on('click', function() {
+    if ($('.hamburgerBtn').hasClass('clicked')) {
+      $('.hamburgerBtn').removeClass('clicked');
+    } else {
+      $('.hamburgerBtn').addClass('clicked');
+    }
+    $(".menu_background").toggleClass('open');
+    $(".menu_background").toggle();
+    $(".menu_container").slideToggle(500);
+  });
+
 });
 </script>
 
